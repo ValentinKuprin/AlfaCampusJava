@@ -9,7 +9,7 @@
     3. ссылку на свой workspace, который можно найти вот тут: [https://www.postman.com/](https://www.postman.com/sergei-kozelkov){**тут указать свой username**}. Зайти на вкладку workspaces и получить ссылку
     4. *если будет выполняться первое доп. задание, то в этом же МР добавить получившийся html-отчет
 5. **Пример заполнения файлика(пункты 1-3):**
-![Пример заполнения файлика](https://s338myt.storage.yandex.net/rdisk/bd96268480d4646913f211916ace70697147349ffa64631b68a6dc7a36666ef8/63922887/86tKaEc8ufeqK3AonewqVP-b2ALgJCP2Vgsc2WpyqnJQ2BwWrEPfl9jJqDhx7glCYmH8Fd48SNUb8tvHICjPsg==?uid=0&filename=%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202022-12-08%20%D0%B2%2017.09.31.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&fsize=206224&hid=21be760b77ca8755d48bb7f0c19533e9&media_type=image&tknv=v2&etag=44be0d3a745f13c7a679ea870d4f2480&rtoken=v9O75ZLSuqGH&force_default=no&ycrid=na-df434d382af0309dd67d0467d9cd5333-downloader18f&ts=5ef54f2e5efc0&s=4742ee160d6b58c4a1b5fbb9318d912b20c97e79ce7efda2b0e02a49b9b35611&pb=U2FsdGVkX19HBzquJvZd9dRR8eFq4xxS4q-x7EkY6dG8IK2yhu66vBgEEdYBf58fRhW9_gUbFF8Jfh3woVgWFyJ1_h4mDZ_dzUmawxMXyC0)
+![Пример заполнения файлика](https://drive.google.com/uc?export=view&id=1pj4_chkdiNcZoSmuw8_XZLEMw4W16wlp)
 
 
 **Что делать:**
