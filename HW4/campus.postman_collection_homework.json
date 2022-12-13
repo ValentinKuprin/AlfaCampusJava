@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "0d12b5e9-7593-46dc-ad2c-aa46a4598725",
+		"name": "campus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8633402"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const token = pm.cookies.get(\"token\")",
+							"pm.collectionVariables.set(\"cookie-token\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"\",\n    \"password\": \"\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://qa-games.ru:9000/users/login",
+					"protocol": "http",
+					"host": [
+						"qa-games",
+						"ru"
+					],
+					"port": "9000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{cookie-token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Какой то странный пост\",\n    \"body\": \"Офигеть какой странный\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://qa-games.ru:9000/posts",
+					"protocol": "http",
+					"host": [
+						"qa-games",
+						"ru"
+					],
+					"port": "9000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{cookie-token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Шрек пришё12л\",\n    \"body\": \"Шрек спел песен12ку\",\n    \"image\": \"null\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://qa-games.ru:9000/posts/",
+					"protocol": "http",
+					"host": [
+						"qa-games",
+						"ru"
+					],
+					"port": "9000",
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create post  + image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{cookie-token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"ОПА, КОВЁ11Р2\",\n    \"body\": \"бйцьултйлцу\",\n    \"image\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://qa-games.ru:9000/posts",
+					"protocol": "http",
+					"host": [
+						"qa-games",
+						"ru"
+					],
+					"port": "9000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPosts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{cookie-token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://qa-games.ru:9000/posts",
+					"protocol": "http",
+					"host": [
+						"qa-games",
+						"ru"
+					],
+					"port": "9000",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "title.contains",
+							"value": "ti",
+							"disabled": true
+						},
+						{
+							"key": "createdAt.gte",
+							"value": "2022-11-01T00:00:00Z",
+							"disabled": true
+						},
+						{
+							"key": "createdAt.lte",
+							"value": "2022-11-03T23:59:59Z",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token={{cookie-token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://qa-games.ru:9000/posts/",
+					"protocol": "http",
+					"host": [
+						"qa-games",
+						"ru"
+					],
+					"port": "9000",
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "cookie-token",
+			"value": ""
+		}
+	]
+}
