@@ -26,3 +26,4 @@
 4. [SQL HW2](HW3/SQL_Part2.md)
 5. [REST HW1](HW4/REST.md)
 5. [REST HW2](HW4/POSTMAN_WS.md)
+6. [HW reactive strategy](HW reactive strategy/HWrs.md)
