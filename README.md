@@ -27,3 +27,4 @@
 5. [REST HW1](HW4/REST.md)
 5. [REST HW2](HW4/POSTMAN_WS.md)
 6. [HW reactive strategy](HW reactive strategy/HWrs.md)
+7. [HW bug reports](HW bug reports/HW6.md)
