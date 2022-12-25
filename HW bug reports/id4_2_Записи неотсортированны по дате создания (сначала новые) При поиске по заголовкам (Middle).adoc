@@ -33,7 +33,7 @@
 |1.2.0
 
 |Окружение
-|Windows version 11, Firefox 108.0.1 (64-разрядный)
+|Windows version 11, Firefox 108.0.1 (64-разрядный), Postman Version 10.6.7
 
 |Скриншот / лог
 |https://drive.google.com/file/d/1MtoxDqLYYGDQCU3kETkhvtWHlx1BSHBb/view?usp=share_link , https://drive.google.com/file/d/1EV5QosI1-NezcPKyM_phJzopO1ibI5Yb/view?usp=share_link
