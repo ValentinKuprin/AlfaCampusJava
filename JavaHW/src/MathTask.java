@@ -6,7 +6,8 @@ public class MathTask {
         int cornerAB = 45;
 
         int areaTriangle = (int) Math.round(0.5 * sideAB * sideBC * Math.sin(Math.toRadians(cornerAB)));
-        System.out.println("Площадь треугольника со сторонами "+ sideAB + " и " + sideBC + " и углом " + cornerAB + " градусов равна " + areaTriangle);
+        System.out.println("Площадь треугольника со сторонами " + sideAB + " и " + sideBC + " и углом " + cornerAB
+                + " градусов равна " + areaTriangle);
 
         int r = 9;
         int areaCircle = (int) Math.round(Math.PI * Math.pow(r, 2));
