@@ -5,6 +5,11 @@ public class CoffeeMachine {
     private int currentAmountWater;
     private double currentAmountCoffee;
     private Coffee coffee;
+    private double strength;
+
+    public CoffeeMachine(double strength) {
+        this.strength = strength;
+    }
 
     public String getСurrentAmountCoffee() {
         return "Кофе осталось " + currentAmountCoffee + " г";
@@ -67,7 +72,7 @@ public class CoffeeMachine {
                     currentAmountWater = currentAmountWater - cupVolume;
                     currentAmountCoffee = currentAmountCoffee - (AMOUNT_COFFEE_MAX_STRENGTH * strength);
 
-                    return "Готовлю " + coffee.getFullNameOfCoffee(CoffeeType.BEANS) + " объемом " + cupVolume + " крепость " + strength;
+                    return "Готовлю " + coffee.getFullNameOfCoffee(CoffeeType.BEANS) + " объемом " + cupVolume + " крепость " + Strength.MILD;
                 }
             }
 
