@@ -47,7 +47,7 @@ public class CoffeeMachine {
                 currentAmountCoffee = currentAmountCoffee + amountCoffee;
 
                 System.out.println("Кофе машина заполнена до " + currentAmountCoffee + " г кофе "
-                        + coffee.getNameOfCoffee());
+                        + coffee.getFullNameOfCoffee(CoffeeType.BEANS));
             }
         } else {
             System.out.println("Передан неверный параметр, обратитесь в сервисный центр");
@@ -67,7 +67,7 @@ public class CoffeeMachine {
                     currentAmountWater = currentAmountWater - cupVolume;
                     currentAmountCoffee = currentAmountCoffee - (AMOUNT_COFFEE_MAX_STRENGTH * strength);
 
-                    return "Готовлю " + coffee.getNameOfCoffee() + " объемом " + cupVolume + " крепость " + strength;
+                    return "Готовлю " + coffee.getFullNameOfCoffee(CoffeeType.BEANS) + " объемом " + cupVolume + " крепость " + strength;
                 }
             }
 
