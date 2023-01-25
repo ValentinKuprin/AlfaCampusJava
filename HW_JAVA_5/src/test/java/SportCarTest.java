@@ -1,22 +1,33 @@
 import details.Engine;
+import exception.NoSuchQualificationException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import professions.Driver;
 import vehicles.SportCar;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class SportCarTest {
-    private SportCar sportCar;
+    private static SportCar sportCar;
+    private final String FILE_PATH = "src/main/resources/DriverWithOutQualificationInfo.txt";
+    private final String WRONG_FILE_PATH = "src/main/resources/DriverWithOutQualification.txt";
 
     @BeforeAll
-    void setCar() {
+    static void setCar() {
         sportCar = new SportCar("Sedan",
                 2000,
-                new Driver("Иванов Иван Иванович", 10),
+                new Driver("Иванов Иван Иванович", 10, 600),
                 new Engine(200, "GM"));
     }
 
     @Test
-    void carStartShouldReturnString() {
+    void carStartShouldReturnString() throws NoSuchQualificationException {
         assertEquals("поехали", sportCar.start(), "Метод start() видимо не отнаследован от класса Car");
     }
 
@@ -36,17 +47,35 @@ public class SportCarTest {
     }
 
     @Test
-    void startWithPositiveDriverExpirienceShouldReturnSuperStart() {
+    void startWithPositiveDriverExpirienceShouldReturnSuperStart() throws NoSuchQualificationException {
         assertEquals("поехали", sportCar.start(), "Метод start() видимо не отнаследован от класса Car");
     }
 
     @Test
-    void startWithNegativeDriverExpirienceShouldReturnString() {
+    void startWithNegativeDriverExpirienceShouldReturnGoodException() {
+        SportCar sportCar;
+        String errorMessage = "";
         sportCar = new SportCar("Sedan",
                 2000,
-                new Driver("Иванов Иван Иванович", 9),
+                new Driver("Иванов Иван Иванович", 0, 400),
                 new Engine(200, "GM"));
-        assertEquals("Иванов Иван Иванович недостаточно квалифицирован, требуемый стаж: 10, стаж водителя: 9", sportCar.start(), "Метод start() видимо не отнаследован от класса Car");
+        try {
+            errorMessage = Files.readString(Paths.get(FILE_PATH), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            System.out.println("Где то ошибка");
+        }
+        assertEquals("Иванов Иван Иванович недостаточно квалифицирован, требуемый стаж: 10, стаж водителя: 0", errorMessage, "В файл записана неверная информация");
+        NoSuchQualificationException exception = assertThrows(NoSuchQualificationException.class, sportCar::start);
+        assertEquals("Иванов Иван Иванович недостаточно квалифицирован, требуемый стаж: 10, стаж водителя: 0", exception.getMessage(), "Ошибка выводит неверный текст, проверьте текст ошибки");
     }
-    
+
+    @Test
+    void startWithNegativeDriverExpirienceIncorectFile() {
+        SportCar sportCar;
+        sportCar = new SportCar("Sedan",
+                2000,
+                new Driver("Иванов Иван Иванович", 0, 400),
+                new Engine(200, "GM"));
+        assertDoesNotThrow(() -> sportCar.writeQualificationDriverInfoToFile("Тест", WRONG_FILE_PATH));
+    }
 }

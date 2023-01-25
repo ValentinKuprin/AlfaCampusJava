@@ -1,22 +1,25 @@
 import details.Engine;
+import exception.NoSuchQualificationException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import professions.Driver;
 import vehicles.Car;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CarTest {
-    private Car car;
+    private static Car car;
 
     @BeforeAll
-    void setCar() {
+    static void setCar() {
         car = new Car("Sedan",
-                2000, 
-                new Driver("Иванов Иван Иванович", 10),
+                2000,
+                new Driver("Иванов Иван Иванович", 10, 600),
                 new Engine(200, "GM"));
     }
 
     @Test
-    void carStartShouldReturnString() {
+    void carStartShouldReturnString() throws NoSuchQualificationException {
         assertEquals("поехали", car.start(), "Метод start() в классе Car работает неправильно");
     }
 
