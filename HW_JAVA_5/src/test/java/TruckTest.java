@@ -50,13 +50,14 @@ public class TruckTest {
     @Test
     void toStringShouldReturnString() {
         String errorMessage = "";
+        assertEquals("Truck info:\nType: Truck; Weight: 8000; Engine manufacturer: GM; Engine power: 900; loadCapacity: 30000", truck.toString(), "Проверь toString на соответствие формату");
         try {
             errorMessage = Files.readString(Paths.get(FILE_PATH), StandardCharsets.UTF_8);
         } catch (Exception e) {
             System.out.println("Где то ошибка");
         }
         assertEquals("Truck info:\nType: Truck; Weight: 8000; Engine manufacturer: GM; Engine power: 900; loadCapacity: 30000", errorMessage, "Проверь toString на соответствие формату");
-        assertEquals("Truck info:\nType: Truck; Weight: 8000; Engine manufacturer: GM; Engine power: 900; loadCapacity: 30000", truck.toString(), "Проверь toString на соответствие формату");
+
     }
 
     @Test

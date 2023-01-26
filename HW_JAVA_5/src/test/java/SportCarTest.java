@@ -59,13 +59,13 @@ public class SportCarTest {
                 2000,
                 new Driver("Иванов Иван Иванович", 0, 400),
                 new Engine(200, "GM"));
+        NoSuchQualificationException exception = assertThrows(NoSuchQualificationException.class, sportCar::start);
         try {
             errorMessage = Files.readString(Paths.get(FILE_PATH), StandardCharsets.UTF_8);
         } catch (Exception e) {
             System.out.println("Где то ошибка");
         }
         assertEquals("Иванов Иван Иванович недостаточно квалифицирован, требуемый стаж: 10, стаж водителя: 0", errorMessage, "В файл записана неверная информация");
-        NoSuchQualificationException exception = assertThrows(NoSuchQualificationException.class, sportCar::start);
         assertEquals("Иванов Иван Иванович недостаточно квалифицирован, требуемый стаж: 10, стаж водителя: 0", exception.getMessage(), "Ошибка выводит неверный текст, проверьте текст ошибки");
     }
 
