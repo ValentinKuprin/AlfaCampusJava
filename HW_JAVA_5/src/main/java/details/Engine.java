@@ -11,5 +11,19 @@ PS: При необходимости получить доступ к прив�
  */
 
 public class Engine {
-    //Пишем код здесь
+    private final int power;
+    private final String manufacturer;
+
+    public Engine(int power, String manufacturer) {
+        this.power = power;
+        this.manufacturer = manufacturer;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
 }

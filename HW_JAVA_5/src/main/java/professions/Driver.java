@@ -13,5 +13,31 @@ PS: При необходимости получить доступ к прив�
  */
 
 public class Driver {
-    //Пишем код здесь
+    private final String fio;
+    private final int drivingExpirience;
+    private final int mileage;
+    private double mileageInYear;
+
+    public Driver(String fio, int drivingExpirience, int mileage) {
+        this.fio = fio;
+        this.drivingExpirience = drivingExpirience;
+        this.mileage = mileage;
+        try {
+            this.mileageInYear = mileage / drivingExpirience;
+        } catch (ArithmeticException e) {
+            this.mileageInYear = mileage;
+        }
+    }
+
+    public String getFio() {
+        return fio;
+    }
+
+    public int getDrivingExpirience() {
+        return drivingExpirience;
+    }
+
+    public double getMileageInYear() {
+        return mileageInYear;
+    }
 }

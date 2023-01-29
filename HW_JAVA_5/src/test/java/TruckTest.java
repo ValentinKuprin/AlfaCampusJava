@@ -62,6 +62,6 @@ public class TruckTest {
 
     @Test
     void startWithNegativeDriverExpirienceIncorectFile() {
-        assertDoesNotThrow(() -> truck.writeTrackInfoToFile("Тест", WRONG_FILE_PATH));
+        assertDoesNotThrow(() -> truck.writeInfoToFile("Тест", WRONG_FILE_PATH));
     }
 }

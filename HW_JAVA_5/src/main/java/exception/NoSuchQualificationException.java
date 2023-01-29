@@ -6,5 +6,10 @@ String errorText
 Он вызывает конструктор родительского класса ошибки и передает туда errorText
  */
 
-public class NoSuchQualificationException {
+public class NoSuchQualificationException extends Exception{
+
+    public NoSuchQualificationException(String errorText){
+        super(errorText);
+    }
+
 }

@@ -76,6 +76,6 @@ public class SportCarTest {
                 2000,
                 new Driver("Иванов Иван Иванович", 0, 400),
                 new Engine(200, "GM"));
-        assertDoesNotThrow(() -> sportCar.writeQualificationDriverInfoToFile("Тест", WRONG_FILE_PATH));
+        assertDoesNotThrow(() -> sportCar.writeInfoToFile("Тест", WRONG_FILE_PATH));
     }
 }

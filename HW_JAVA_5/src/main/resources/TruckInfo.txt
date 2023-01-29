@@ -1,0 +1,2 @@
+Truck info:
+Type: Truck; Weight: 8000; Engine manufacturer: GM; Engine power: 900; loadCapacity: 30000

@@ -19,6 +19,51 @@ src/main/resources/<fileName>
 PS: Не забываем про super
  */
 
-public class SportCar {
-    //Пишем код здесь
+import Interfaces.WriteInfo;
+import details.Engine;
+import exception.NoSuchQualificationException;
+import professions.Driver;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class SportCar extends Car implements WriteInfo {
+    private final int minimalDrivingExperience = 10;
+
+    public SportCar(String type, int weight, Driver driver, Engine engine) {
+        super(type, weight, driver, engine);
+    }
+
+    public void writeInfoToFile(String fileText, String fileName) {
+        FileWriter writer = null;
+        try {
+            writer = new FileWriter(WriteInfo.FILE_PATH + fileName);
+            writer.write(fileText);
+            System.out.println("Файл записан успешно.");
+        } catch (IOException e) {
+            System.out.println("Ошибка записи в файл. \n" + e);
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException e) {
+                    System.out.println("Ошибка закрытия файла. \n" + e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public String start() throws NoSuchQualificationException {
+        if (getDriver().getDrivingExpirience() < minimalDrivingExperience) {
+            String insufficientDrivingExperienceExceptionText = getDriver().getFio()
+                    + " недостаточно квалифицирован, требуемый стаж: "
+                    + minimalDrivingExperience + ", стаж водителя: " + getDriver().getDrivingExpirience();
+
+            writeInfoToFile(insufficientDrivingExperienceExceptionText, "DriverWithOutQualificationInfo.txt");
+            throw new NoSuchQualificationException(insufficientDrivingExperienceExceptionText);
+        }
+
+        return super.start();
+    }
 }
