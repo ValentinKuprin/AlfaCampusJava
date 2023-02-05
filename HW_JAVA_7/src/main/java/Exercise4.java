@@ -15,7 +15,7 @@ import java.util.*;
  */
 
 
-public class Exercise4 extends Person {
+public class Exercise4 {
     public Map<Integer, Student> generateMapOfStudents(int quantity) {
         Map<Integer, Student> studentsMap = new HashMap<>();
 
