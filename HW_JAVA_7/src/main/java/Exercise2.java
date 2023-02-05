@@ -8,7 +8,8 @@ import java.util.List;
  */
 
 public class Exercise2 {
-    public void removeStudents(List<Student> students, int gpa) {
-        //write code here
+    public List<Student> removeStudents(List<Student> students, int gpa) {
+        students.removeIf(s -> s.getGpa() < gpa);
+        return students;
     }
 }

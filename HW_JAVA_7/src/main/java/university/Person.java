@@ -37,6 +37,12 @@ public class Person {
         return lastNames.get(new Random().nextInt(lastNames.size()));
     }
 
+    public void setNewPersonName() {
+        this.firstName = getRandomFirstName();
+        this.middleName = getRandomMiddleName();
+        this.lastName = getRandomLastName();
+    }
+
     @Override
     public String toString() {
         return firstName + " " + middleName + " " + lastName;

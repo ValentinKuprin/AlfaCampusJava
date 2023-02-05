@@ -21,10 +21,6 @@ public class Student {
         return person;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
     public char getGroup() {
         return group;
     }
