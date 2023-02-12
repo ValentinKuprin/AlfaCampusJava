@@ -129,16 +129,14 @@ public class StartPageTest extends BaseTest {
     }
 
     @Test
-    public void createPostEmptyTitleFilledBodyNotification() throws InterruptedException {
+    public void createPostEmptyTitleFilledBodyNotificationTest() throws InterruptedException {
         login();
         WebElement buttonAddNewPost = driver.findElement(By.xpath("//span[text() = 'Добавить новый пост']"));
         buttonAddNewPost.click();
         Thread.sleep(500);
         WebElement inputPostBody = driver.findElement(By.xpath("//div[@class = 'scrollbar__offset_b0coh']//textarea"));
         inputPostBody.sendKeys(BODY);
-        WebElement buttonCreatePost =
-                driver.findElement(By.xpath(
-                        "//span[text() = 'Создать']/.."));
+        WebElement buttonCreatePost = driver.findElement(By.xpath("//span[text() = 'Создать']/.."));
         buttonCreatePost.click();
         WebElement alert = driver.findElement(By.xpath("//div[@role = 'alert']"));
 
@@ -146,7 +144,7 @@ public class StartPageTest extends BaseTest {
     }
 
     @Test
-    public void createPostFilledTitleEmptyBodyNotification() throws InterruptedException {
+    public void createPostFilledTitleEmptyBodyNotificationTest() throws InterruptedException {
         login();
         WebElement buttonAddNewPost = driver.findElement(By.xpath("//span[text() = 'Добавить новый пост']"));
         buttonAddNewPost.click();
@@ -161,7 +159,7 @@ public class StartPageTest extends BaseTest {
     }
 
     @Test
-    public void createPostEmptyTitleEmptyBodyNotification() throws InterruptedException {
+    public void createPostEmptyTitleEmptyBodyNotificationTest() throws InterruptedException {
         login();
         WebElement buttonAddNewPost = driver.findElement(By.xpath("//span[text() = 'Добавить новый пост']"));
         buttonAddNewPost.click();
@@ -239,9 +237,7 @@ public class StartPageTest extends BaseTest {
         inputPostName.sendKeys(TITLE);
         WebElement inputPostBody = driver.findElement(By.xpath("//div[@class = 'scrollbar__offset_b0coh']//textarea"));
         inputPostBody.sendKeys(BODY);
-        WebElement buttonCreatePost =
-                driver.findElement(By.xpath(
-                        "//span[text() = 'Создать']/.."));
+        WebElement buttonCreatePost = driver.findElement(By.xpath("//span[text() = 'Создать']/.."));
         buttonCreatePost.click();
         driver.navigate().refresh();
     }
