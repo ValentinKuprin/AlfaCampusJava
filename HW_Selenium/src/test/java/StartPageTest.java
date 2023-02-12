@@ -63,7 +63,6 @@ public class StartPageTest extends BaseTest {
 
         List<String> titleList = new ArrayList<>();
         titlePosts.forEach(title -> titleList.add(title.getText()));
-        titleList.forEach(System.out::println);
 
         assertTrue(titleList.contains(TITLE));
 
