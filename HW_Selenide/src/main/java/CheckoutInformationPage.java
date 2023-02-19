@@ -29,6 +29,7 @@ public class CheckoutInformationPage {
     private void clickContinueButton() {
         continueButton.click();
     }
+
     public CheckoutOverviewPage addYourInformation(String firstName, String lastName, String zipPostalCode) {
         this.setFirstName(firstName)
                 .setLastname(lastName)

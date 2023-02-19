@@ -29,8 +29,8 @@ public class HeaderBlock {
         resetAppState.click();
     }
 
-    public void checkProductsCounterIsDisplayed() {
-        productsCounter.shouldBe(visible).shouldHave(exactText("6"));
+    public void checkProductsCounterIsDisplayed(int counterProducts) {
+        productsCounter.shouldBe(visible).shouldHave(exactText(String.valueOf(counterProducts)));
     }
 
     public void checkProductsCounterIsNotDisplayed() {

@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class CartPageTests extends BaseTest{
+public class CartPageTests extends BaseTest {
 
     @BeforeEach
     void login() {

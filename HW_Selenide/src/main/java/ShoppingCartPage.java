@@ -9,6 +9,7 @@ public class ShoppingCartPage {
     private final ElementsCollection productsListInCart = $$x("//div[@class='inventory_item_name']");
     private final ElementsCollection removeButtonList = $$x("//button[contains(@id, 'remove')]");
     private final SelenideElement checkoutButton = $x("//button[@id='checkout']");
+
     public void removeAllProductsInCart() {
         for (SelenideElement removeButton : removeButtonList) {
             removeButton.click();
@@ -19,6 +20,7 @@ public class ShoppingCartPage {
         checkoutButton.click();
         return new CheckoutInformationPage();
     }
+
     public void checkLProductsListSizeInCart(int listSize) {
         productsListInCart.shouldHave(size(listSize));
     }

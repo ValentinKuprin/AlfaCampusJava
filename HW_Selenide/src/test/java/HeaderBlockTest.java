@@ -10,7 +10,7 @@ public class HeaderBlockTest extends BaseTest {
     }
 
     @Test
-    public void checkSuccessLogout() {
+    void checkSuccessLogout() {
         HeaderBlock headerBlock = new HeaderBlock();
         headerBlock.openMenu();
         headerBlock.logoutFromSystem();
@@ -19,7 +19,7 @@ public class HeaderBlockTest extends BaseTest {
     }
 
     @Test
-    public void checkResetAppState() {
+    void checkResetAppState() {
         ProductsPage productsPage = new ProductsPage();
         productsPage.addAllProductsToCart();
         HeaderBlock headerBlock = new HeaderBlock();
