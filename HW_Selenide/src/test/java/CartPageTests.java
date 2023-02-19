@@ -34,6 +34,6 @@ public class CartPageTests extends BaseTest {
         HeaderBlock headerBlock = new HeaderBlock();
         ShoppingCartPage shoppingCartPage = headerBlock.goToCart();
         shoppingCartPage.removeAllProductsInCart();
-        headerBlock.checkProductsCounterIsNotDisplayed();
+        headerBlock.checkRemoveAllProductsCounterIsNotDisplayed();
     }
 }

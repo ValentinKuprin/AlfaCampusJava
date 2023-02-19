@@ -29,11 +29,11 @@ public class HeaderBlock {
         resetAppState.click();
     }
 
-    public void checkProductsCounterIsDisplayed(int counterProducts) {
+    public void checkAddProductsToCartCounterIsDisplayed(int counterProducts) {
         productsCounter.shouldBe(visible).shouldHave(exactText(String.valueOf(counterProducts)));
     }
 
-    public void checkProductsCounterIsNotDisplayed() {
+    public void checkRemoveAllProductsCounterIsNotDisplayed() {
         productsCounter.shouldNotBe(visible);
     }
 }

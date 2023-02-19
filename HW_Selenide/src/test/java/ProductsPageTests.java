@@ -18,7 +18,7 @@ public class ProductsPageTests extends BaseTest {
         ProductsPage productsPage = new ProductsPage();
         productsPage.addAllProductsToCart();
         HeaderBlock headerBlock = new HeaderBlock();
-        headerBlock.checkProductsCounterIsDisplayed(6);
+        headerBlock.checkAddProductsToCartCounterIsDisplayed(6);
     }
 
     @Test
@@ -31,6 +31,6 @@ public class ProductsPageTests extends BaseTest {
         productsPage.addAllProductsToCart();
         productsPage.removeAllProductsFromCart();
         HeaderBlock headerBlock = new HeaderBlock();
-        headerBlock.checkProductsCounterIsNotDisplayed();
+        headerBlock.checkRemoveAllProductsCounterIsNotDisplayed();
     }
 }

@@ -25,6 +25,6 @@ public class HeaderBlockTest extends BaseTest {
         HeaderBlock headerBlock = new HeaderBlock();
         headerBlock.openMenu();
         headerBlock.resetAllAppState();
-        headerBlock.checkProductsCounterIsNotDisplayed();
+        headerBlock.checkRemoveAllProductsCounterIsNotDisplayed();
     }
 }
