@@ -28,7 +28,6 @@ public class MainPage extends Page {
     @AndroidFindBy(id = "org.wikipedia:id/search_src_text")
     private MobileElement inputText;
 
-
     @AndroidFindBy(id = "org.wikipedia:id/page_list_item_title")
     private List<MobileElement> searchingResults;
 
