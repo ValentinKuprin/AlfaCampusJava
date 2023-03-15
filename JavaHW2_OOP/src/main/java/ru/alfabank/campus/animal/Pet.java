@@ -1,7 +1,7 @@
 package ru.alfabank.campus.animal;
 
 public abstract class Pet {
-    private final int PAWS_COUNT = 4;
+    private static final int PAWS_COUNT = 4;
 
     public void sleep() {
         System.out.println("я сплю");

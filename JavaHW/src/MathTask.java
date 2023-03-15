@@ -9,9 +9,9 @@ public class MathTask {
         System.out.println("Площадь треугольника со сторонами " + sideAB + " и " + sideBC + " и углом " + cornerAB
                 + " градусов равна " + areaTriangle);
 
-        int r = 9;
-        int areaCircle = (int) Math.round(Math.PI * Math.pow(r, 2));
-        System.out.println("Площадь круга с радиусом " + r + " равна " + areaCircle);
+        int radius = 9;
+        int areaCircle = (int) Math.round(Math.PI * Math.pow(radius, 2));
+        System.out.println("Площадь круга с радиусом " + radius + " равна " + areaCircle);
 
 
         int randomNumber = (int) (Math.random() * 101);

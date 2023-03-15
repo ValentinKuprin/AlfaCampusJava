@@ -1,23 +1,14 @@
 package app.pages;
 
+import app.ContextType;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.remote.RemoteWebElement;
-import org.openqa.selenium.support.FindAll;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.w3c.dom.Text;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class MainPage extends Page {
-
 
     @AndroidFindBy(id = "org.wikipedia:id/search_container")
     private MobileElement searchField;
@@ -37,12 +28,29 @@ public class MainPage extends Page {
     @AndroidFindBy(id = "org.wikipedia:id/article_menu_bookmark")
     private MobileElement saveButton;
 
-
-    public void swtichContext() {
+    public boolean switchContextToWebView() throws InterruptedException {
+        Thread.sleep(1500);
         Set<String> contextNames = driver.getContextHandles();
-        driver.context((String) contextNames.toArray()[1]);
+        for (String context : contextNames) {
+            if (context.contains(ContextType.WEBVIEW.getValue())) {
+                driver.context(context);
+                return true;
+            }
+        }
+        return false;
     }
 
+    public boolean switchContextToNative() throws InterruptedException {
+        Thread.sleep(1500);
+        Set<String> contextNames = driver.getContextHandles();
+        for (String context : contextNames) {
+            if (context.contains(ContextType.NATIVE.getValue())) {
+                driver.context(context);
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void searchingByText(String text) {
         searchField.click();
