@@ -31,7 +31,7 @@
 ## Оглавление
 
 1. [HW1](HW1/HW1.md)
-2. [HW2](HW2/HW2.md)
+2. [TestStrategy_HW2](TestStrategy_HW2/HW2.md)
 3. [sql_HW3](sql_HW3/SQL_Part1.md)
 4. [sql_HW3](sql_HW3/SQL_Part2.md)
 5. [RestPostman_HW4](RestPostman_HW4/REST.md)
